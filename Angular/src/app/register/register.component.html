@@ -1,0 +1,117 @@
+<div class="d-flex justify-content-center">
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmitRegistration()" class="container">
+    <label for="form">{{ 'register.registerForm' | translate }}</label>
+    <div class="container form-group">
+      <label for="name">{{ 'register.name' | translate }}</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.name?.errors && (f['name']?.dirty || f['name']?.touched)
+        }"
+      />
+      <div *ngIf="f['name']?.errors && (f['name']?.dirty || f['name']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['name']?.errors">
+          {{ 'register.nameAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="email">{{ 'register.email' | translate }}</label>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.email?.errors && (f['email']?.dirty || f['email']?.touched)
+        }"
+      />
+      <div *ngIf="f['email']?.errors && (f['email']?.dirty || f['email']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['email']?.errors">
+          {{ 'register.emailAlert' | translate }}
+        </div>
+      </div>
+    </div>
+
+    <fieldset formGroupName="passwordGroup">
+      <div class="container form-row">
+        <div class="col-6">
+          <label for="password">{{ 'register.password' | translate }}</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                form.controls['passwordGroup'].get('password').errors &&
+                (form.controls['passwordGroup'].get('password').dirty || form.controls['passwordGroup'].get('password').touched)
+            }"
+          />
+          <div
+            *ngIf="
+              form.controls['passwordGroup'].get('password').errors &&
+              (form.controls['passwordGroup'].get('password').dirty || form.controls['passwordGroup'].get('password').touched)
+            "
+            class="invalid-feedback"
+          >
+            <div *ngIf="form.controls['passwordGroup'].get('password').errors">
+              {{ 'register.passwordAlert' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <label for="passwordConfirm">{{ 'register.passwordConfirm' | translate }}</label>
+          <input
+            type="password"
+            formControlName="passwordConfirm"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                (form.controls['passwordGroup'].get('passwordConfirm').errors || form.controls['passwordGroup'].errors) &&
+                (form.controls['passwordGroup'].get('passwordConfirm').dirty ||
+                  form.controls['passwordGroup'].get('passwordConfirm').touched)
+            }"
+          />
+          <div
+            *ngIf="
+              (form.controls['passwordGroup'].get('passwordConfirm').errors || form.controls['passwordGroup'].errors) &&
+              (form.controls['passwordGroup'].get('passwordConfirm').dirty || form.controls['passwordGroup'].get('passwordConfirm').touched)
+            "
+            class="invalid-feedback"
+          >
+            <div *ngIf="form.controls['passwordGroup'].get('passwordConfirm').errors || form.controls['passwordGroup'].errors">
+              {{ 'register.passwordConfirmAlert' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="container form-group">
+      <label for="defaultSite">{{ 'register.defaultSite' | translate }}</label>
+      <select
+        id="defaultSite"
+        formControlName="defaultSite"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.defaultSite?.errors && (f['defaultSite']?.dirty || f['defaultSite']?.touched)
+        }"
+      >
+        <option *ngFor="let siteId of keys(sites)" [ngValue]="sites[siteId]">{{ sites[siteId] }} </option>
+      </select>
+      <div *ngIf="f['defaultSite']?.errors && (f['defaultSite']?.dirty || f['defaultSite']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['defaultSite']?.errors">
+          {{ 'register.defaultSiteAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <button type="submit" [disabled]="form.invalid">
+        {{ 'register.registerButton' | translate }}
+      </button>
+      <button type="reset" [disabled]="form.pristine" (click)="form.reset()">
+        {{ 'register.resetButton' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nodejs">
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/itsh_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Activities.adminActivities.SelectedUserActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.adminActivities.ListAllUsersActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.catalogueActivities.CatalogueItemViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.userActivities.SetProfilePictureActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.catalogueActivities.DiscountCatalogueActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.userActivities.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="192.168.29.114"
+                    android:pathPattern="/api/v1/user/reset-password.*"
+                    android:port="3000"
+                    android:scheme="http" />
+                <data
+                    android:host="10.0.2.2"
+                    android:pathPattern="/api/v1/user/reset-password.*"
+                    android:port="3000"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.catalogueActivities.CatalogueActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.catalogueActivities.CatalogueAddActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.userActivities.UpdateActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.homeActivities.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.loginActivities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAUkj5zE0vH4PAg8LJdnB0OplFLoJhbl4Q" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+</manifest>

@@ -1,0 +1,168 @@
+<div [ngClass]="!user.id ? 'row' : 'd-flex justify-content-center'">
+  <div [ngClass]="!user.id ? 'col align-self-center' : 'd-none'">
+    <div *ngIf="pictureForm" class="d-flex justify-content-center">
+      <form [formGroup]="pictureForm" (ngSubmit)="onUploadPicture()">
+        <div class="container form-group">
+          <div class="d-flex justify-content-center">
+            <img *ngIf="user && user?.profilePicture" id="profile-picture" [attr.src]="user?.profilePicture" />
+          </div>
+          <label for="profilePicture">{{ 'user.profilePicture' | translate }}</label>
+          <input class="form-control" type="file" formControlName="profilePicture" accept="image/*" (change)="onFileChange($event)" />
+          <app-image-cropper
+            *ngIf="showImageCropper"
+            [imageChangedEvent]="imageChangedEvent"
+            (imageCropped)="onImageCropped($event)"
+          ></app-image-cropper>
+        </div>
+        <div class="container form-group">
+          <button type="submit" [disabled]="pictureForm.invalid || !isValidPicture">
+            {{ 'user.uploadPictureButton' | translate }}
+          </button>
+          <button
+            type="reset"
+            [disabled]="pictureForm.pristine && !fileToUpload"
+            (click)="resetPictureVariables()"
+            (click)="fetchProfilePicture()"
+          >
+            {{ 'user.resetButton' | translate }}
+          </button>
+          <button
+            type="button"
+            class="remove-button"
+            (click)="onRemovePicture()"
+            [disabled]="!user.profilePicture || user.profilePicture === DEFAULT_PICTURE_URL"
+          >
+            {{ 'user.removeButton' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="d-flex justify-content-center">
+      <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmitUpdateProfile()" class="container">
+        <div class="container form-group">
+          <label for="name">{{ 'user.name' | translate }}</label>
+          <input
+            type="text"
+            formControlName="name"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': f.name?.errors && (f['name']?.dirty || f['name']?.touched)
+            }"
+          />
+          <div *ngIf="f['name']?.errors && (f['name']?.dirty || f['name']?.touched)" class="invalid-feedback">
+            <div *ngIf="f['name']?.errors">
+              {{ 'user.nameAlert' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="container form-group">
+          <label for="email">{{ 'user.email' | translate }}</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': f.email?.errors && (f['email']?.dirty || f['email']?.touched)
+            }"
+          />
+          <div *ngIf="f['email']?.errors && (f['email']?.dirty || f['email']?.touched)" class="invalid-feedback">
+            <div *ngIf="f['email']?.errors">
+              {{ 'user.emailAlert' | translate }}
+            </div>
+          </div>
+        </div>
+        <fieldset *ngIf="form.controls['passwordGroup']" formGroupName="passwordGroup">
+          <div class="container form-row">
+            <div class="col-6">
+              <label for="password">{{ 'user.password' | translate }}</label>
+              <input
+                type="password"
+                formControlName="password"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form.controls['passwordGroup'].get('password').errors &&
+                    (form.controls['passwordGroup'].get('password').dirty || form.controls['passwordGroup'].get('password').touched)
+                }"
+              />
+              <div
+                *ngIf="
+                  form.controls['passwordGroup'].get('password').errors &&
+                  (form.controls['passwordGroup'].get('password').dirty || form.controls['passwordGroup'].get('password').touched)
+                "
+                class="invalid-feedback"
+              >
+                <div *ngIf="form.controls['passwordGroup'].get('password').errors">
+                  {{ 'user.passwordAlert' | translate }}
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="passwordConfirm">{{ 'user.passwordConfirm' | translate }}</label>
+              <input
+                type="password"
+                formControlName="passwordConfirm"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    (form.controls['passwordGroup'].get('passwordConfirm').errors || form.controls['passwordGroup'].errors) &&
+                    (form.controls['passwordGroup'].get('passwordConfirm').dirty ||
+                      form.controls['passwordGroup'].get('passwordConfirm').touched)
+                }"
+              />
+              <div
+                *ngIf="
+                  (form.controls['passwordGroup'].get('passwordConfirm').errors || form.controls['passwordGroup'].errors) &&
+                  (form.controls['passwordGroup'].get('passwordConfirm').dirty ||
+                    form.controls['passwordGroup'].get('passwordConfirm').touched)
+                "
+                class="invalid-feedback"
+              >
+                <div *ngIf="form.controls['passwordGroup'].get('passwordConfirm').errors || form.controls['passwordGroup'].errors">
+                  {{ 'user.passwordConfirmAlert' | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="container form-group">
+          <label for="defaultSite">{{ 'user.defaultSite' | translate }}</label>
+          <select
+            formControlName="defaultSite"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': f.defaultSite?.errors && (f['defaultSite']?.dirty || f['defaultSite']?.touched)
+            }"
+          >
+            <option *ngFor="let siteId of keys(sites)" [ngValue]="sites[siteId]">{{ sites[siteId] }} </option>
+          </select>
+          <div *ngIf="f['defaultSite']?.errors && (f['defaultSite']?.dirty || f['defaultSite']?.touched)" class="invalid-feedback">
+            <div *ngIf="f['defaultSite']?.errors">
+              {{ 'user.defaultSiteAlert' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="container form-group">
+          <button type="submit" [disabled]="form.invalid">
+            {{ 'user.updateButton' | translate }}
+          </button>
+          <button type="reset" [disabled]="form.pristine" (click)="form.reset()">
+            {{ 'user.resetButton' | translate }}
+          </button>
+          <button
+            *ngIf="form.controls['passwordGroup']"
+            type="button"
+            class="remove-button"
+            [disabled]="isRemovable()"
+            (click)="onDeleteProfile()"
+            title="If you want to delete your profile, enter your email, password and confirm password, then click DELETE!"
+          >
+            {{ 'user.deleteButton' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

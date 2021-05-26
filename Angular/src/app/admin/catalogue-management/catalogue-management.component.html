@@ -1,0 +1,179 @@
+<form *ngIf="form" [formGroup]="form" enctype="multipart/form-data" class="row">
+  <div class="col">
+    <div class="container form-group">
+      <label for="seller">{{ 'catalogue-management.seller' | translate }}</label>
+      <input
+        type="text"
+        formControlName="seller"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.seller?.errors && (f['seller']?.dirty || f['seller']?.touched)
+        }"
+      />
+      <div *ngIf="f['seller']?.errors && (f['seller']?.dirty || f['seller']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['seller']?.errors">
+          {{ 'catalogue-management.sellerAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="category">{{ 'catalogue-management.category' | translate }}</label>
+      <select
+        formControlName="category"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.category?.errors && (f['category']?.dirty || f['category']?.touched)
+        }"
+      >
+        <option *ngFor="let categoryId of keys(categories)" [ngValue]="categories[categoryId]"
+          >{{ translate.instant('categories.' + categoryId) }}
+        </option>
+      </select>
+      <div *ngIf="f['category']?.errors && (f['category']?.dirty || f['category']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['site']?.errors">
+          {{ 'catalogue-management.categoryAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="site">{{ 'catalogue-management.site' | translate }}</label>
+      <select
+        formControlName="site"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.site?.errors && (f['site']?.dirty || f['site']?.touched)
+        }"
+      >
+        <option *ngFor="let siteId of keys(sites)" [ngValue]="sites[siteId]">{{ translate.instant('sites.' + siteId) }} </option>
+      </select>
+      <div *ngIf="f['site']?.errors && (f['site']?.dirty || f['site']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['site']?.errors">
+          {{ 'catalogue-management.siteAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="address">{{ 'catalogue-management.address' | translate }}</label>
+      <input
+        type="text"
+        formControlName="address"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.address?.errors && (f['address']?.dirty || f['address']?.touched)
+        }"
+      />
+      <div *ngIf="f['address']?.errors && (f['address']?.dirty || f['address']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['address']?.errors">
+          {{ 'catalogue-management.addressAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="url">{{ 'catalogue-management.url' | translate }}</label>
+      <input
+        type="text"
+        formControlName="url"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.url?.errors && (f['url']?.dirty || f['url']?.touched)
+        }"
+      />
+      <div *ngIf="f['url']?.errors && (f['url']?.dirty || f['url']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['url']?.errors">
+          {{ 'catalogue-management.urlAlert' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="d-flex justify-content-around">
+      <div class="container form-group">
+        <label for="validFrom">{{ 'catalogue-management.validFrom' | translate }}</label>
+        <input
+          formControlName="validFrom"
+          [owlDateTime]="validFrom"
+          [owlDateTimeTrigger]="validFrom"
+          placeholder="{{ 'catalogue-management.validFromPlaceholder' | translate }}"
+          required
+        />
+        <div *ngIf="f['validFrom']?.errors && (f['validFrom']?.dirty || f['validFrom']?.touched)" class="invalid-feedback">
+          <div *ngIf="f['validFrom']?.errors">
+            {{ 'catalogue-management.validFromAlert' | translate }}
+          </div>
+        </div>
+        <owl-date-time #validFrom [pickerType]="'calendar'" [firstDayOfWeek]="1"></owl-date-time>
+      </div>
+      <div class="container form-group">
+        <label for="validTill">{{ 'catalogue-management.validTill' | translate }}</label>
+        <input
+          formControlName="validTill"
+          [owlDateTimeTrigger]="validTill"
+          [owlDateTime]="validTill"
+          placeholder="{{ 'catalogue-management.validTillPlaceholder' | translate }}"
+        />
+        <owl-date-time #validTill [pickerType]="'calendar'" [firstDayOfWeek]="1"></owl-date-time>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="discountRate">{{ 'catalogue-management.discountRate' | translate }}</label>
+      <input
+        type="text"
+        formControlName="discountRate"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.discountRate?.errors && (f['discountRate']?.dirty || f['discountRate']?.touched)
+        }"
+      />
+      <div *ngIf="f['discountRate']?.errors && (f['discountRate']?.dirty || f['discountRate']?.touched)" class="invalid-feedback">
+        <div *ngIf="f['discountRate']?.errors">
+          {{ 'catalogue-management.discountRateAlert' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="container form-group">
+      <label for="description">{{ 'catalogue-management.description' | translate }}</label>
+      <textarea
+        formControlName="description"
+        rows="4"
+        cols="50"
+        placeholder="{{ 'catalogue-management.descriptionPlaceholder' | translate }}"
+      >
+      </textarea>
+    </div>
+    <div class="container form-group">
+      <label for="attachment">{{ 'catalogue-management.attachment' | translate }}</label>
+      <input #fileInput type="file" name="attachment" class="form-control" (change)="onFileChange($event)" />
+    </div>
+  </div>
+  <div class="container form-group">
+    <label for="active">{{ 'catalogue-management.active' | translate }}</label>
+    <input
+      formControlName="active"
+      type="checkbox"
+      id="active"
+      name="active"
+      [checked]="activateDiscount"
+      (change)="activateDiscount = !activateDiscount"
+    />
+    {{ 'catalogue-management.activateDiscount' | translate }}
+  </div>
+  <div class="container">
+    <button
+      type="button"
+      [disabled]="form.invalid"
+      (click)="editableCatalogueItem && editableCatalogueItem.id ? onUpdateCatalogueItem() : onAddNewCatalogueItem()"
+    >
+      {{ 'catalogue-management.saveButton' | translate }}
+    </button>
+    <button
+      type="button"
+      [disabled]="!form.touched"
+      (click)="route.snapshot.queryParamMap.get('id') ? form.reset(queryParamsToFormModel()) : form.reset()"
+    >
+      {{ 'catalogue-management.resetButton' | translate }}
+    </button>
+    <button type="button" (click)="router.navigate(['catalogue'])">
+      {{ 'catalogue-management.catalogueButton' | translate }}
+    </button>
+  </div>
+</form>

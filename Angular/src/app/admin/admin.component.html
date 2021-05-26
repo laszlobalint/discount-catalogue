@@ -1,0 +1,17 @@
+<div [ngSwitch]="true">
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-outline-primary btn-lg" type="button" (click)="router.navigate(['admin', 'user-management'])">
+      {{ 'admin.user-management' | translate }}
+    </button>
+    <button class="btn btn-outline-secondary btn-lg" type="button" (click)="router.navigate(['admin', 'catalogue-management'])">
+      {{ 'admin.catalogue-management' | translate }}
+    </button>
+  </div>
+  <div *ngSwitchCase="router.url.indexOf('/admin/user-management') >= 0" class="d-flex justify-content-center">
+    <app-user-management></app-user-management>
+  </div>
+  <div *ngSwitchCase="router.url.indexOf('/admin/catalogue-management') >= 0" class="container d-flex justify-content-center">
+    <app-catalogue-management></app-catalogue-management>
+  </div>
+  <div *ngSwitchDefault></div>
+</div>

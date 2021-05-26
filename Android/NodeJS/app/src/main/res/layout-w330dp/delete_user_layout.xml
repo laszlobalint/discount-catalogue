@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EditText
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/deletePwText"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginTop="280dp"
+    android:ems="10"
+    android:inputType="textPassword"
+    android:textAlignment="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:textColor="#000000"/>

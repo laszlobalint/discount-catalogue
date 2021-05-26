@@ -1,0 +1,59 @@
+app-map {
+  border: 10px blueviolet;
+}
+
+#center-button {
+  left: 0;
+  padding-left: 7px;
+}
+
+#close-button {
+  right: 0;
+  padding-left: 8px;
+}
+
+.H_ib_body {
+  position: relative;
+  font-size: 12px;
+  background: none;
+}
+
+.H_ib {
+  border-radius: 99px;
+  padding-top: 10px;
+}
+
+.map {
+  z-index: 9999;
+  width: 900px;
+  height: 600px;
+  margin: 15px;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 5px grey;
+}
+
+.map-button {
+  z-index: 9999;
+  position: absolute;
+  display: inline-block;
+  background-color: #8d2a90;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px;
+  height: 30px;
+  width: 30px;
+  top: 0;
+}
+
+.map-button:hover {
+  cursor: pointer;
+  border: 30px;
+  background-color: white;
+  color: #8d2a90;
+}

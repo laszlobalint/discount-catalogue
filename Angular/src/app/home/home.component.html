@@ -1,0 +1,7 @@
+<carousel [showIndicators]="false">
+  <slide *ngFor="let text of welcomeTexts; let i = index">
+    <p class="d-flex h-100 align-items-center justify-content-center">
+      {{ text }}
+    </p>
+  </slide>
+</carousel>

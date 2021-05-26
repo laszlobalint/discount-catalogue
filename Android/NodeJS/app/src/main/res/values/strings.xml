@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">ITSH</string>
+    <string name="delete_user">Delete user</string>
+    <string name="update_info">Update info</string>
+    <string name="logout">Logout</string>
+    <string name="welcome">Welcome on board,\u0020</string>
+    <string name="your_current_name">Your current name:</string>
+    <string name="your_current_e_mail">Your current email:</string>
+    <string name="enter_new_password">Enter new password:</string>
+    <string name="password_again">Repeat password:</string>
+    <string name="enter_site">Default site:</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_temp_main">Temporary main</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="update_list">Update list</string>
+    <string name="site_list">Site list</string>
+    <string name="applied_site_filters">Applied Site ID filters:</string>
+    <string name="seller">Seller:</string>
+    <string name="category_id">Category:</string>
+    <string name="site_id">Site name:</string>
+    <string name="address">Address:</string>
+    <string name="discount_rate">Discount rate:</string>
+    <string name="valid_from">Valid from:</string>
+    <string name="valid_till">Valid till:</string>
+    <string name="active">Active:</string>
+    <string name="description">Description:</string>
+    <string name="site_prompt">Choose a site ID:</string>
+    <string name="category_prompt">Choose a category ID:</string>
+    <string name="catalogue">Catalogue</string>
+    <string name="add_catalogue_element">Add catalogue element</string>
+    <string name="choose_a_site">Choose a site</string>
+    <string name="category_list">Category list</string>
+    <string name="choose_a_category">Choose a category</string>
+    <string name="create_new_element">Create new element</string>
+    <string name="delete">Delete</string>
+    <string name="discount_catalogue">Discount catalogue</string>
+    <string name="select_site">Select site</string>
+    <string name="select_category">Select category</string>
+    <string name="catalogue_retrieve_successful">Catalogue retrieve successful</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="e_mail">Email:</string>
+    <string name="password">Password:</string>
+    <string name="enter_password">Enter password!</string>
+    <string name="one_more_step">One more step!</string>
+    <string name="deletion_successful">Deletion successful</string>
+    <string name="bearer_token">Bearer\u0020</string>
+    <string name="write_name_site">Write username and select site!</string>
+    <string name="name_cannot_empty">Name cannot be empty!</string>
+    <string name="site_cannot_empty">Site cannot be empty!</string>
+    <string name="registration_successful">Registration successful!</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="set_new_password">Set new password</string>
+    <string name="password_reset_email_sent">Password reset email has been sent.</string>
+    <string name="new_password_cannot_empty">New password field cannot be empty!</string>
+    <string name="password_again_cannot_empty">Password repetition field cannot be empty!</string>
+    <string name="passwords_not_match">Entered passwords do not match!</string>
+    <string name="new_password_set">New password successfully set!</string>
+    <string name="reset_token_invalid_expired">Reset token is invalid or expired!</string>
+    <string name="main_menu">Main menu</string>
+    <string name="itsh_app">ITSH App</string>
+    <string name="itsh_logo_description_text">ITSH logo</string>
+    <string name="profile_picture_update">Profile picture update</string>
+    <string name="browse">File</string>
+    <string name="camera">Camera</string>
+    <string name="remove_picture">Remove picture</string>
+    <string name="back">Back</string>
+    <string name="szeged">SZEGED</string>
+    <string name="pecs">PÉCS</string>
+    <string name="debrecen">DEBRECEN</string>
+    <string name="budapest">BUDAPEST</string>
+    <string name="country_wise">COUNTRY WISE</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="url">URL:</string>
+    <string name="userid">User ID:</string>
+    <string name="name">Name:</string>
+    <string name="disable">Disable</string>
+    <string name="admin">Admin</string>
+    <string name="deleted">Deleted</string>
+    <string name="deactivate">Deactivate</string>
+    <string name="deactivated">Deactivated</string>
+    <string name="supported_profice_pic_types">Only JPG, JPEG, GIF and PNG files are supported!</string>
+    <string name="admin_list_users">List all app users</string>
+    <string name="user_update_success">"User successfully updated"</string>
+    <string name="open_attachment">open attachment</string>
+    <string-array name="site_id">
+        <item>Szeged</item>
+        <item>Pécs</item>
+        <item>Debrecen</item>
+        <item>Budapest</item>
+        <item>Country wise</item>
+    </string-array>
+    <string-array name="category_id_hun">
+        <item>Étel/Ital</item>
+        <item>Autó-Motor</item>
+        <item>Egészség</item>
+        <item>Fotó</item>
+        <item>Szabadidő</item>
+        <item>Szállás, Utazás</item>
+        <item>Egyéb</item>
+        <item>Sport</item>
+        <item>Informatika</item>
+        <item>Könyv</item>
+        <item>Ruha</item>
+        <item>Szépségápolás</item>
+        <item>Színház, Mozi</item>
+        <item>Sportegyesület</item>
+        <item>Magánoktatás</item>
+        <item>Rendezvényszervezés</item>
+        <item>Barkács, Háztartás, Szerszám</item>
+    </string-array>
+    <string-array name="category_id">
+        <item>Food/Drinks</item>
+        <item>Car-Bike</item>
+        <item>Health</item>
+        <item>Photo</item>
+        <item>Free time</item>
+        <item>Accommodation, Travel</item>
+        <item>Other</item>
+        <item>Sport</item>
+        <item>IT Tech</item>
+        <item>Books</item>
+        <item>Clothes</item>
+        <item>Beauty products</item>
+        <item>Theatre, Cinema</item>
+        <item>Sport organizations</item>
+        <item>Personal education</item>
+        <item>Event organization</item>
+        <item>Household, tools</item>
+    </string-array>
+    <string-array name="locale">
+        <item>HU</item>
+        <item>EN</item>
+    </string-array>
+</resources>

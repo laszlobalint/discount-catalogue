@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">ITSH</string>
+    <string name="delete_user">Felhasználó törlése</string>
+    <string name="update_info">Adatok frissítése</string>
+    <string name="logout">Kijelentkezés</string>
+    <string name="welcome">Üdv a fedélzeten,\u0020</string>
+    <string name="your_current_name">Jelenlegi neved:</string>
+    <string name="your_current_e_mail">Jelenlegi e-mail:</string>
+    <string name="enter_new_password">Új jelszó:</string>
+    <string name="password_again">Jelszó újra:</string>
+    <string name="enter_site">Alapértelmezett telephely:</string>
+    <string name="update">Frissítés</string>
+    <string name="cancel">Mégsem</string>
+    <string name="title_activity_temp_main">Ideiglenes főoldal</string>
+    <string name="navigation_drawer_open">Vezérlő rajzoló megnyitása</string>
+    <string name="navigation_drawer_close">Vezérlő rajzoló bezárása</string>
+    <string name="nav_header_title">Android Stúdió</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigáció fejléc</string>
+    <string name="action_settings">Beállítások</string>
+    <string name="update_list">Lista frissítése</string>
+    <string name="applied_site_filters">Alkalmazott telephely ID szűrők:</string>
+    <string name="seller">Eladó:</string>
+    <string name="category_id">Kategória:</string>
+    <string name="site_id">Telephely:</string>
+    <string name="address">Cím:</string>
+    <string name="discount_rate">Kedvezmény:</string>
+    <string name="valid_from">Érvényesség kezdete:</string>
+    <string name="valid_till">Érvényesség vége:</string>
+    <string name="active">Aktív:</string>
+    <string name="description">Leírás:</string>
+    <string name="site_prompt">Válassz telephelyet:</string>
+    <string-array name="site_id">
+        <item>Szeged</item>
+        <item>Pécs</item>
+        <item>Debrecen</item>
+        <item>Budapest</item>
+        <item>Országos</item>
+    </string-array>
+    <string name="category_prompt">Válassz kategóriát:</string>
+    <string name="catalogue">Katalógus</string>
+    <string name="add_catalogue_element">Katalógus elem hozzáadása</string>
+    <string name="choose_a_site">Telephely választása</string>
+    <string name="site_list">Telephely lista</string>
+    <string name="category_list">Kategória lista</string>
+    <string name="choose_a_category">Kategória választása</string>
+    <string name="create_new_element">Új elem létrehozása</string>
+    <string name="delete">Törlés</string>
+    <string name="discount_catalogue">Kedvezménykatalógus</string>
+    <string name="select_site">Válassz telephelyet</string>
+    <string name="select_category">Válassz kategóriát</string>
+    <string name="catalogue_retrieve_successful">Lista letöltése sikerült</string>
+    <string name="login">Belépés</string>
+    <string name="register">Regisztráció</string>
+    <string name="e_mail">E-mail:</string>
+    <string name="password">Jelszó:</string>
+    <string name="enter_password">Adj meg egy jelszót!</string>
+    <string name="one_more_step">Még egy lépés!</string>
+    <string name="deletion_successful">Törlés sikerült</string>
+    <string name="bearer_token">Bearer\u0020</string>
+    <string name="write_name_site">Írd be a nevedet, és válassz telephelyet!</string>
+    <string name="name_cannot_empty">A név nem lehet üres!</string>
+    <string name="site_cannot_empty">A telephely nem lehet üres!</string>
+    <string name="registration_successful">Regisztráció sikeres!</string>
+    <string name="forgot_your_password">Elfelejtetted a jelszavad?</string>
+    <string name="set_new_password">Új jelszó beállítása</string>
+    <string name="password_reset_email_sent">Jelszóemlékeztető e-mail elküldve.</string>
+    <string name="new_password_cannot_empty">Új jelszó mező nem lehet üres!</string>
+    <string name="password_again_cannot_empty">Megismételt jelszó mező nem lehet üres!</string>
+    <string name="passwords_not_match">A beírt jelszavak nem egyeznek meg!</string>
+    <string name="new_password_set">Az új jelszó sikeresen beállítva!</string>
+    <string name="reset_token_invalid_expired">A token helytelen vagy lejárt!</string>
+    <string name="main_menu">Főmenü</string>
+    <string name="itsh_app">ITSH App</string>
+    <string name="itsh_logo_description_text">ITSH logó</string>
+    <string name="profile_picture_update">Profilkép frissítése</string>
+    <string name="browse">Fájl</string>
+    <string name="camera">Kamera</string>
+    <string name="remove_picture">Kép törlése</string>
+    <string name="back">Vissza</string>
+    <string name="szeged">SZEGED</string>
+    <string name="pecs">PÉCS</string>
+    <string name="debrecen">DEBRECEN</string>
+    <string name="budapest">BUDAPEST</string>
+    <string name="country_wise">ORSZÁGOS</string>
+    <string name="yes">Igen</string>
+    <string name="no">Nem</string>
+    <string name="url">Webcím:</string>
+    <string name="userid">Felhasználói ID:</string>
+    <string name="name">Név:</string>
+    <string name="disable">Kikapcsolás</string>
+    <string name="admin">Admin</string>
+    <string name="deleted">Törölt</string>
+    <string name="deactivate">Deaktiválás</string>
+    <string name="deactivated">Deaktivált</string>
+    <string name="supported_profice_pic_types">Csak a JPG, JPEG, GIF és PNG fájlok támogatottak!</string>
+    <string name="admin_list_users">Összes felhasználó listázása</string>
+    <string name="user_update_success">"Felhasználó sikeresen frissítve"</string>
+    <string name="open_attachment">Csatolmány megnyitása</string>
+    <string-array name="category_id_hun">
+        <item>Étel/Ital</item>
+        <item>Autó-Motor</item>
+        <item>Egészség</item>
+        <item>Fotó</item>
+        <item>Szabadidő</item>
+        <item>Szállás, Utazás</item>
+        <item>Egyéb</item>
+        <item>Sport</item>
+        <item>Informatika</item>
+        <item>Könyv</item>
+        <item>Ruha</item>
+        <item>Szépségápolás</item>
+        <item>Színház, Mozi</item>
+        <item>Sportegyesület</item>
+        <item>Magánoktatás</item>
+        <item>Rendezvényszervezés</item>
+        <item>Barkács, Háztartás, Szerszám</item>
+    </string-array>
+    <string-array name="category_id">
+        <item>Étel/Ital</item>
+        <item>Autó-Motor</item>
+        <item>Egészség</item>
+        <item>Fotó</item>
+        <item>Szabadidő</item>
+        <item>Szállás, Utazás</item>
+        <item>Egyéb</item>
+        <item>Sport</item>
+        <item>Informatika</item>
+        <item>Könyv</item>
+        <item>Ruha</item>
+        <item>Szépségápolás</item>
+        <item>Színház, Mozi</item>
+        <item>Sportegyesület</item>
+        <item>Magánoktatás</item>
+        <item>Rendezvényszervezés</item>
+        <item>Barkács, Háztartás, Szerszám</item>
+    </string-array>
+    <string-array name="locale">
+        <item>HU</item>
+        <item>EN</item>
+    </string-array>
+</resources>

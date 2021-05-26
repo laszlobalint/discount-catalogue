@@ -1,0 +1,120 @@
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+ag-grid-angular {
+  padding-bottom: 30px;
+  margin: 20px 50px 0 50px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #555;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  width: 22px;
+  height: 22px;
+  background-image: url(./assets/tick_logo.png);
+  background-size: 20px 20px;
+}
+
+.ag-header-cell {
+  background-color: #8d2a90;
+  color: aliceblue;
+}
+
+.ag-row:hover {
+  background-color: #ac4eaf;
+  color: aliceblue;
+}
+
+.modal-dialog {
+  position: relative;
+  display: table;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: auto;
+  min-width: 300px;
+}
+
+.selector {
+  overflow-y: auto;
+  width: 250px;
+  height: 160px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  margin-top: 2.5rem;
+  display: -ms-flexbox;
+  display: flexbox;
+  margin: 30px;
+}
+
+button {
+  display: inline-block;
+  margin: 20px !important;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 5px !important;
+  font-size: 15px;
+  font-weight: bold;
+  color: #8d2a90;
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 30px;
+  background-color: #8d2a90;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+input,
+select {
+  border-radius: 4px;
+  border-top: #8d2a90 solid 2px;
+  border-left: #8d2a90 solid 2px;
+  text-align: center;
+}
+
+option {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+option:hover {
+  background-color: #8d2a90;
+  color: white;
+}
+
+label {
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.language-button {
+  display: inline-block;
+  align-items: right;
+  margin: 20px !important;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 10px !important;
+  font-size: 10px;
+  font-weight: bold;
+  color: #8d2a90;
+  text-decoration: none;
+}

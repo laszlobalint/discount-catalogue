@@ -1,0 +1,50 @@
+<app-map
+  *ngIf="address && isMapDisplayed"
+  [address]="address"
+  [ngStyle]="{ display: isMapDisplayed ? 'block' : 'none' }"
+  [(isMapDisplayed)]="isMapDisplayed"
+  (mapVisibilityChange)="onCloseMap($event)"
+>
+</app-map>
+<div class="d-flex justify-content-center" [ngStyle]="{ display: isMapDisplayed ? 'block' : 'none' }">
+  <form [formGroup]="form" (ngSubmit)="onSubmitSearch()" class="container">
+    <label for="form">{{ 'catalogue.info' | translate }}</label>
+    <div *ngIf="form" class="d-flex justify-content-between">
+      <div class="container">
+        <label>{{ 'catalogue.site' | translate }}</label>
+        <select formControlName="siteIds" class="selector" multiple>
+          <option *ngFor="let siteId of keys(sites)" [ngValue]="siteId">
+            {{ translate.instant('sites.' + siteId) }}
+          </option>
+        </select>
+      </div>
+      <div class="container">
+        <label>{{ 'catalogue.category' | translate }}</label>
+        <select formControlName="categoryIds" class="selector" multiple>
+          <option *ngFor="let categoryId of keys(categories); let i = index" [ngValue]="categoryId">{{
+            translate.instant('categories.' + categoryId)
+          }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="container">
+      <button type="submit">{{ 'catalogue.searchButton' | translate }}</button>
+      <button type="reset" (click)="form.reset()">
+        {{ 'catalogue.resetButton' | translate }}
+      </button>
+    </div>
+  </form>
+</div>
+<div [formGroup]="searchForm" class="container d-flex justify-content-center w-25">
+  <input
+    formControlName="seller"
+    type="text"
+    class="form-control"
+    placeholder="{{ 'catalogue.sellerPlaceholder' | translate }}"
+    (ngModelChange)="onFilterResults()"
+  />
+</div>
+<div *ngIf="catalogueSearchResult" class="d-flex justify-content-center pt-0">
+  <ag-grid-angular class="ag-theme-balham" [ngStyle]="{ display: isMapDisplayed ? 'none' : 'block' }" [gridOptions]="gridOptions">
+  </ag-grid-angular>
+</div>

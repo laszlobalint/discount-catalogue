@@ -1,0 +1,18 @@
+<div class="cropper">
+  <image-cropper
+    containWithAspectRatio="true"
+    format="jpeg"
+    [cropperMinHeight]="300"
+    [cropperMinWidth]="300"
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [resizeToWidth]="0"
+    [roundCropper]="true"
+    [aspectRatio]="1 / 1"
+    (imageCropped)="onImageCropped($event)"
+  >
+  </image-cropper>
+  <button type="button" class="btn btn-light" (click)="onApplyCroppedImage()">
+    {{ 'user.cropImage' | translate }}
+  </button>
+</div>

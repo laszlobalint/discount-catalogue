@@ -1,0 +1,44 @@
+<div class="navbar navbar-default">
+  <a [routerLink]="['/login']" *ngIf="!isLoggedIn">{{ 'header.login' | translate }}</a>
+  <a [routerLink]="['/register']" *ngIf="!isLoggedIn">{{ 'header.registration' | translate }}</a>
+  <div class="btn-group dropdown" class="dropdown-toggle" *ngIf="isLoggedIn" dropdown>
+    <a dropdownToggle role="button">{{ 'header.tools' | translate }}</a>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem">
+        <a *ngIf="isLoggedIn && isAdmin" [routerLink]="['/admin']" class="dropdown-item">{{ 'header.admin' | translate }}</a>
+      </li>
+      <li role="menuitem">
+        <a class="dropdown-item" [routerLink]="['/catalogue']">{{ 'header.catalogue' | translate }}</a>
+      </li>
+      <li role="menuitem">
+        <a class="dropdown-item" href="https://azgard.itsh-external.hu/" target="_blank">AzgardLite</a>
+      </li>
+      <li role="menuitem">
+        <a class="dropdown-item" href="https://tempo.itsh.itsh-internal.hu/" target="_blank">T-EMPO</a>
+      </li>
+      <li role="menuitem">
+        <a class="dropdown-item" href="https://itsh.process-solutions.hu/" target="_blank">Nexon</a>
+      </li>
+    </ul>
+  </div>
+  <a *ngIf="isLoggedIn" id="logout" class="top-menu-items" (click)="onLogout()">{{ 'header.logout' | translate }}</a>
+  <a *ngIf="isLoggedIn && isUrlParamsEmpty()" class="top-menu-items" [routerLink]="['/user']">{{ 'header.profile' | translate }}</a>
+</div>
+<div class="dropdown d-block" [style.paddingLeft.px]="40" [style.paddingTop.px]="40">
+  <select [(ngModel)]="selectedLanguage" (ngModelChange)="useLanguage($event)">
+    <option *ngFor="let id of keys(languages)">{{ languages[id] }}</option>
+  </select>
+  <img
+    *ngIf="iconUrl"
+    [ngStyle]="{ visibility: iconUrl ? 'visible' : 'hidden' }"
+    [style.height.px]="40"
+    [style.paddingLeft.px]="20"
+    [src]="iconUrl"
+    alt="Flag icon"
+  />
+</div>
+<div class="container">
+  <a [routerLink]="['/']">
+    <img class="logo" src="../assets/itsh_logo.png" />
+  </a>
+</div>
